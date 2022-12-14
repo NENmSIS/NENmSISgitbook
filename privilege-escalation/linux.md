@@ -234,7 +234,7 @@ In this case, we can determine that the application utilizes the libcalc.so shar
 
 As shown in the following screenshot, the user account's home directory does not contain the .config directory, which contains the libcalc.so shared object file. As a result, we will have to create the .config directory and compile the shared object file ourselves:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 2\. We can create the .config directory in the user account's home directory: `mkdir /home/user/.config` . Once we have created the .config directory, we need to create the libcalc.c file: `touch /home/user/.config/libcalc.c`&#x20;
 
@@ -249,3 +249,18 @@ system("cp /bin/bash /tmp/bash && chmod +s /tmp/bash && /
 tmp/bash -p");
 }
 ```
+
+This C code utilizes a custom function called inject that runs a system command that copies the Bash binary into the Linux temp directory. After doing this, it will assign SUID permissions to the Bash binary and execute it from the temp directory. Because the suid-so binary runs as the root user and calls the libcalc.so shared object, the custom libcalc.so shared object file will also be executed with root permissions and provide us with an elevated Bash session.
+
+Once you have added the custom code, ensure that you indent it correctly
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+4\. Compile the custom `libcalc.c` with Gnu C Compiler (GCC)
+
+```bash
+gcc -shared -o /home/user/.config/libcalc.so -fPIC /home/user/.config/libcalc.c
+#using -fPIC, ensures that the code in our shared library is positionindependent and can be loaded by any address in memory
+```
+
+If you have followed the previous steps correctly, running the suid-so binary should provide you with a Bash session.
