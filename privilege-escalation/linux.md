@@ -2,7 +2,7 @@
 
 ## Linux enumeration
 
-### System enumeration
+#### System enumeration
 
 ```bash
 cat /etc/*-release #Enumerate the operative system's information
@@ -32,7 +32,7 @@ cat /etc/anacrontab
 cat /var/spool/cron/crontabs/root
 ```
 
-### User and group enumeration
+#### User and group enumeration
 
 ```bash
 whoami #Determine the current user
@@ -42,7 +42,7 @@ cat /etc/group #List the groups on the system
 find / -perm -u=s -type f 2>/dev/null #Search for SUID binaries 
 ```
 
-### Network enumeration
+#### Network enumeration
 
 ```bash
 ifconfig #Enumerate target network interfaces and their details
@@ -50,9 +50,16 @@ route #Routing table
 netstat -ant #Active connections and ports
 ```
 
-## Automated enumeration tools
+#### Automated enumeration tools
 
-### LinPEAS
+#### LinPEAS
 
 [https://github.com/carlospolop/\
 privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+
+## Linux Kernel Exploits
+
+#### Local enumeration tools
+
+* LinPEAS
+
