@@ -74,3 +74,12 @@ privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privi
 * Using searchsploit after knowing the kernel version
 
 ## Linux Password Mining
+
+#### Extracting passwords from memory
+
+1. `ps -ef` or `ps -ef | grep <SERVICE_NAME>`  &#x20;
+2. We can utilize GDB to dump the memory of the Bash service in order to reveal credentials that may have been entered in the Bash session earlier on by other users. `GDB -p <PID>`&#x20;
+3. List all mapped memory reginos for the procces using the following command in GDB: `info proc mappings`&#x20;
+4. Dump the memory of the service: `dump memory <OUTPUT_FILE> <START_ADDRESS> <STOP_ADDRESS>`&#x20;
+5. After dumping the memory, we can utilize the strings utility to identify potential credentials: `strings /<OUTPUT_FILE> | grep passw`&#x20;
+
