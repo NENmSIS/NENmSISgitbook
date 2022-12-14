@@ -23,7 +23,7 @@ First, we open Burp Suite Intercept to off We specify the proxy: `dirb http://IP
 dirb http://192.15.42.3 /usr/share/dirb/wordlists/small.txt -p http://127.0.0.1:8080
 ```
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 And to see the results faster, we can filter using the "Status" or "Length"
 
