@@ -83,3 +83,9 @@ privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privi
 4. Dump the memory of the service: `dump memory <OUTPUT_FILE> <START_ADDRESS> <STOP_ADDRESS>`&#x20;
 5. After dumping the memory, we can utilize the strings utility to identify potential credentials: `strings /<OUTPUT_FILE> | grep passw`&#x20;
 
+#### Searching for passwords in configuration files
+
+Perform a recursive scan from the root of the files system and output a list of files that contain the `password` keyword: `grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2> /dev/null`  (use also passw or pass)
+
+
+
