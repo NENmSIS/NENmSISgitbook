@@ -10,7 +10,7 @@
 
 ## Privilege Escalation
 
-* [Privilege escalation](privilege-escalation/privilege-escalation.md)
+* [Privilege escalation](privilege-escalation/privilege-escalation/README.md)
 * [Linux](privilege-escalation/linux.md)
 * [Windows](privilege-escalation/windows.md)
 
