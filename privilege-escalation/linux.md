@@ -57,9 +57,20 @@ netstat -ant #Active connections and ports
 [https://github.com/carlospolop/\
 privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
 
+#### Linux exploit suggester
+
+[https://github.com/mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
+
 ## Linux Kernel Exploits
 
 #### Local enumeration tools
 
 * LinPEAS
 
+#### Enumerating system information
+
+* Using Linpeas, we can enumerate only system information: `./linpeas.sh -o SysI`
+* Using the **Linux exploit suggester** tool
+* Using searchsploit after knowing the kernel version
+
+## Linux Password Mining
