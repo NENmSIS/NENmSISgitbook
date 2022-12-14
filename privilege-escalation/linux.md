@@ -85,7 +85,20 @@ privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privi
 
 #### Searching for passwords in configuration files
 
-Perform a recursive scan from the root of the files system and output a list of files that contain the `password` keyword: `grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2> /dev/null`  (use also passw or pass)
+* Perform a recursive scan from the root of the files system and output a list of files that contain the `password` keyword:&#x20;
 
+```bash
+grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2> /dev/null
+#Use also passw or pass
+#Limit the folder to '/etc' or '/home/<USER>' to decrease the amount of info
+```
 
+* Use `find` with `grep` to fine-tune the searches.
+
+```bash
+find /etc -type f -exec grep -i -I "PASS" {} /dev/null \;
+#This command will output a list of files in the /etc directory that contain the pass keyword.
+```
+
+#### Searching for passwords in history files
 
