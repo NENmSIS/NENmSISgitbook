@@ -42,3 +42,28 @@ reg query HKCU /f password /t REG_SZ /s #HKEY_CURRENT_USER
 
 ### Firewall and antivirus enumeration
 
+```bash
+sc query windefend #Status of Windows Defender
+sc queryex type=service #To identify third-party antivirus
+netsh firewall show state #Open ports
+```
+
+## Automated enumeration tools
+
+#### Local exploit suggester
+
+Is a post-exploitation module for metasploit. We can use it after having meterpreter.
+
+```
+use post/multi/recon/local_exploit_suggester
+set SESSION <Session Number>
+```
+
+### winPEAS
+
+```
+https://github.
+com/carlospolop/privilege-escalation-awesome-scriptssuite/
+tree/master/winPEAS/winPEASexe
+```
+
