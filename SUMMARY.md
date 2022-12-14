@@ -49,3 +49,4 @@
 ## Notes
 
 * [🌴 Machine's notes](notes/machines-notes.md)
+* [General Commands](notes/general-commands.md)
