@@ -118,6 +118,8 @@ Usage: --script=script-name
 
 Where can i find the scripts? /usr/share/nmap/scripts and /usr/share/nmap/scripts/script.db
 
+Also, we can find the scripts information with `nmap --script-help "ftp*"`
+
 #### Saving the Output[​](broken-reference) <a href="#saving-the-output" id="saving-the-output"></a>
 
 There are 3 formats: normal, grepable and XML.
