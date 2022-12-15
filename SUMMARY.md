@@ -25,6 +25,7 @@
 ## Walkthroughs
 
 * [Hack The Box](walkthroughs/hack-the-box/README.md)
+  * [MetaTwo](walkthroughs/hack-the-box/metatwo.md)
   * [Photobomb](walkthroughs/hack-the-box/photobomb.md)
   * [Precius](walkthroughs/hack-the-box/precius.md)
   * [Unified](walkthroughs/hack-the-box/unified.md)

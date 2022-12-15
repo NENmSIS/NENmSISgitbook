@@ -234,7 +234,7 @@ In this case, we can determine that the application utilizes the libcalc.so shar
 
 As shown in the following screenshot, the user account's home directory does not contain the .config directory, which contains the libcalc.so shared object file. As a result, we will have to create the .config directory and compile the shared object file ourselves:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 2\. We can create the .config directory in the user account's home directory: `mkdir /home/user/.config` . Once we have created the .config directory, we need to create the libcalc.c file: `touch /home/user/.config/libcalc.c`&#x20;
 
