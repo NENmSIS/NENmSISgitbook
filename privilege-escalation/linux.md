@@ -118,7 +118,7 @@ cat /etc/cron.deny*
 
 This thechnique involves identifying the default `$PATH` variable that's been configured for cron jobs in the `crontab` file, generating a payload, and placing it in the path.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
