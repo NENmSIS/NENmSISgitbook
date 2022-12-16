@@ -254,7 +254,7 @@ This C code utilizes a custom function called inject that runs a system command 
 
 Once you have added the custom code, ensure that you indent it correctly
 
-<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 4\. Compile the custom `libcalc.c` with Gnu C Compiler (GCC)
 

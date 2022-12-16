@@ -27,4 +27,4 @@ dirb http://192.15.42.3 /usr/share/dirb/wordlists/small.txt -p http://127.0.0.1:
 
 And to see the results faster, we can filter using the "Status" or "Length"
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
