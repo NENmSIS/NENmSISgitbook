@@ -46,7 +46,7 @@ Searching on google we find this web with a vulnerability:
 
 So we try with the same command `sleep 5`
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 And after 5 seconds, we obtain the prompt with the PDF :clap:
 

