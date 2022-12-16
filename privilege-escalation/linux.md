@@ -224,7 +224,7 @@ We can also search for useful strings in the binary by using the built-in string
 strings /usr/local/bin/suid-so
 ```
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (3).png>)
 
 In this case, we can determine that the application utilizes the libcalc.so shared object in the user account's home directory. The strings utility can prove to be very useful if you do not have access to the strace utility or any automated enumeration scripts such as linPEAS.
 
@@ -254,7 +254,7 @@ This C code utilizes a custom function called inject that runs a system command 
 
 Once you have added the custom code, ensure that you indent it correctly
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 4\. Compile the custom `libcalc.c` with Gnu C Compiler (GCC)
 
