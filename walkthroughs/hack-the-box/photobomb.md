@@ -10,7 +10,7 @@ It logs in automatically.
 
 Inspect the POST with burp to download a PNG photo and find diferrent parameteres, so lets use an encoded URL with the parameter to obtain a reverse shell:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Analyze the sudo permissions
 
