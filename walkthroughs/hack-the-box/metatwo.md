@@ -14,7 +14,7 @@ And obtain this response, showing that is vulnerable to some attacks when we hav
 
 There is also another direction: `/wp-admin/admin-ajax.php` that seems vulnerable due to the usage of the plugin `bookingpress`.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 Lets test this exploit:&#x20;
 
@@ -122,7 +122,7 @@ jnelson:Cb4_JmWM8zUZWMu@Ys
 
 Listing the directories and services find `passpie` that stores root credentials and also a passpie's folder with the private pgp keys.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
