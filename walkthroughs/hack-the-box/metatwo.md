@@ -128,3 +128,10 @@ Listing the directories and services find `passpie` that stores root credentials
 
 Transfer the .keys file and now lets decrypt it with john.
 
+Now , transfer the passwords to a file:&#x20;
+
+```bash
+touch pass
+passpie export pass #Will ask for the cracked password
+```
+
