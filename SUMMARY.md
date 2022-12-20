@@ -35,6 +35,7 @@
 ## Tools
 
 * [Cracking Tools](tools/cracking-tools.md)
+* [Dirbuster](tools/dirbuster.md)
 * [Dirb](tools/dirb.md)
 * [Hydra](tools/hydra.md)
 * [Metasploit](tools/metasploit.md)
