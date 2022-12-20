@@ -120,3 +120,11 @@ After loging in the ftp, there is a user and password in the `send_email.php.`
 jnelson:Cb4_JmWM8zUZWMu@Ys
 ```
 
+Listing the directories and services find `passpie` that stores root credentials and also a passpie's folder with the private pgp keys.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Transfer the .keys file and now lets decrypt it with john.
+
