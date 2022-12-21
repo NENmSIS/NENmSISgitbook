@@ -291,14 +291,14 @@ And now, to use the connection throught&#x20;
 
 Lets add thiis info to de config file:
 
-<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
 
 ```
 HiddenServiceDir /tmp/serviciooculto_nen
 HiddenServicePort 80 127.0.0.1:8000
 ```
 
-<figure><img src="../.gitbook/assets/imagen (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
 
 After rebooting Tor, lets find the onion direction:
 
