@@ -291,14 +291,14 @@ And now, to use the connection throught&#x20;
 
 Lets add thiis info to de config file:
 
-<figure><img src="../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 HiddenServiceDir /tmp/serviciooculto_nen
 HiddenServicePort 80 127.0.0.1:8000
 ```
 
-<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 After rebooting Tor, lets find the onion direction:
 
@@ -312,3 +312,13 @@ And we can acces to the service using the onion direction.
 
 ### Configure SOCAT for TOR
 
+Now, to attack our service, we nned to configur socat:
+
+```bash
+socat TCP4-LISTEN:8888,reuseaddr,fork SOCKS4A:127.0.0.1:<ONION_ADDRESS>:<ONION_PORT>,socksport=<SOCKS_PORT>
+# TCP4-LISTEN Can be any port
+# ONION_ADDRESS is de .onion direction that has been created
+# ONION_PORT has to be the port 80
+# SOCKS_PORT is usually the 9150 port (tor port)
+
+```
