@@ -272,18 +272,43 @@ sqlmap -r <FICHERO> --level=5 --risk=3 -D <nombre_db> -T <tabla> --dump
 
 To configure TorBrowser, we need to edit the `Configure Connection` settings after opening Tor Browser Setup.
 
-<figure><img src="../.gitbook/assets/imagen (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (7).png" alt=""><figcaption></figcaption></figure>
 
 It won't work by default due that the default nodes are known are normally blocked by ISP or firewalls. Thre are hidden nodes (bridges) to avoid and bypass the censorship.&#x20;
 
 1. Request a Bridge
 2.
 
-    <figure><img src="../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/imagen (4).png" alt=""><figcaption></figcaption></figure>
 
 Now we will be able to bypass the Firewall block.
 
 If you can't connect, use a `Select a Built-In Bridge`
 
-``
+And now, to use the connection throught&#x20;
+
+<figure><img src="../.gitbook/assets/imagen (1).png" alt=""><figcaption><p>Where the service is running</p></figcaption></figure>
+
+Lets add thiis info to de config file:
+
+<figure><img src="../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
+
+```
+HiddenServiceDir /tmp/serviciooculto_nen
+HiddenServicePort 80 127.0.0.1:8000
+```
+
+<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
+
+After rebooting Tor, lets find the onion direction:
+
+<figure><img src="../.gitbook/assets/imagen (6).png" alt=""><figcaption></figcaption></figure>
+
+Let's start a server in the port 8000: \`python3 -m http.server 8000
+
+And we can acces to the service using the onion direction.
+
+
+
+### Configure SOCAT for TOR
 
