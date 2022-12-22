@@ -16,4 +16,33 @@ Upload a reverse shell
 
 And now let's escalate privileges
 
+<figure><img src="../../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
+
+In the nginx/sites-available folder there is a file `soc-player.htb` with this content:
+
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name soc-player.soccer.htb;
+
+        root /root/app/views;
+
+        location / {
+                proxy_pass http://localhost:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+
+}
+```
+
+That includes a new subdomain `soc-player.soccer.htb`
+
+``
+
 <figure><img src="../../.gitbook/assets/imagen (8).png" alt=""><figcaption></figcaption></figure>
