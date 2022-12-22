@@ -46,3 +46,5 @@ That includes a new subdomain `soc-player.soccer.htb`
 ``
 
 <figure><img src="../../.gitbook/assets/imagen (8).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/imagen (11).png" alt=""><figcaption></figcaption></figure>
