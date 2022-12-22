@@ -5,4 +5,5 @@
 <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>URL encoded payload after the filetype=jpg parameter</p></figcaption></figure>
 
 * [File upload bypass](https://vulp3cula.gitbook.io/hackers-grimoire/exploitation/web-application/file-upload-bypass)
+* Search for subdomains in the /etc/nginx folder. If found, add it to the /etc/hosts file.
 
