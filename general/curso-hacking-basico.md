@@ -291,7 +291,7 @@ And now, to use the connection throught&#x20;
 
 Lets add thiis info to de config file:
 
-<figure><img src="../.gitbook/assets/imagen (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 HiddenServiceDir /tmp/serviciooculto_nen

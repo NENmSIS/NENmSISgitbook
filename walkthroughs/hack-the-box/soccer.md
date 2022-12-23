@@ -47,7 +47,7 @@ That includes a new subdomain `soc-player.soccer.htb`
 
 <figure><img src="../../.gitbook/assets/imagen (8).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/imagen (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
 
 After creating an account and login, find and input box, inspect the source code and find a websocket, so try this post to sqli: [https://rayhan0x01.github.io/ctf/2021/04/02/blind-sqli-over-websocket-automation.html](https://rayhan0x01.github.io/ctf/2021/04/02/blind-sqli-over-websocket-automation.html)
 
