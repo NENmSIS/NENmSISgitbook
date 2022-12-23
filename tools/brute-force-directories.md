@@ -3,5 +3,5 @@
 ### Gobuster
 
 ```bash
-gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u http://soccer.htb
+gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 50 -u http://soccer.htb
 ```
