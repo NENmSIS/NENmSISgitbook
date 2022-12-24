@@ -279,7 +279,7 @@ It won't work by default due that the default nodes are known are normally block
 1. Request a Bridge
 2.
 
-    <figure><img src="../.gitbook/assets/imagen (4).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/imagen (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we will be able to bypass the Firewall block.
 

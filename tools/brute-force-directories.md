@@ -21,5 +21,5 @@ wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-large-directorie
 Subdomains
 
 ```bash
-wfuzz -c -f subdom -w Documents/Shoppy/subdomain -u 'http://shoppy.htb' -H "Host: FUZZ.shoppy.htb" --sc 200
+wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --hc 400,404,403,301 -H "Host: FUZZ.shoppy.htb" -u http://shoppy.htb -t 100
 ```
