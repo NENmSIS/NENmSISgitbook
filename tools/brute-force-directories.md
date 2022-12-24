@@ -17,3 +17,9 @@ gobuster vhost -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top10000
 ```bash
 wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt --hc 404 "http://shoppy.htb/FUZZ/"
 ```
+
+Subdomains
+
+```bash
+wfuzz -c -f subdom -w Documents/Shoppy/subdomain -u 'http://shoppy.htb' -H "Host: FUZZ.shoppy.htb" --sc 200
+```
