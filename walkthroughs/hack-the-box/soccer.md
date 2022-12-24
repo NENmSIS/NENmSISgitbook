@@ -4,7 +4,7 @@
 
 With gobuster, discover http://soccer.htb/tiny
 
-<figure><img src="../../.gitbook/assets/imagen (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/imagen (1).png" alt=""><figcaption></figcaption></figure>
 
 Searching in google `H3K Tiny File Manager` discover the default admin credentials `admin:admin@123` so we can exploit it:&#x20;
 
