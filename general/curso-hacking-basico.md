@@ -272,7 +272,7 @@ sqlmap -r <FICHERO> --level=5 --risk=3 -D <nombre_db> -T <tabla> --dump
 
 To configure TorBrowser, we need to edit the `Configure Connection` settings after opening Tor Browser Setup.
 
-<figure><img src="../.gitbook/assets/imagen (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 It won't work by default due that the default nodes are known are normally blocked by ISP or firewalls. Thre are hidden nodes (bridges) to avoid and bypass the censorship.&#x20;
 
@@ -291,14 +291,14 @@ And now, to use the connection throught&#x20;
 
 Lets add thiis info to de config file:
 
-<figure><img src="../.gitbook/assets/imagen (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 HiddenServiceDir /tmp/serviciooculto_nen
 HiddenServicePort 80 127.0.0.1:8000
 ```
 
-<figure><img src="../.gitbook/assets/imagen (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 After rebooting Tor, lets find the onion direction:
 
