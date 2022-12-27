@@ -50,5 +50,11 @@ The default configuration of vsFTPd can be found in `/etc/vsftpd.conf`. In here,
 
 
 
+### SNMP
+
+```
+snmpwalk -v2c -c internal mentorquotes.htb
+```
+
 
 
