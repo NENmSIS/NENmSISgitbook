@@ -6,7 +6,7 @@
 
 * [File upload bypass](https://vulp3cula.gitbook.io/hackers-grimoire/exploitation/web-application/file-upload-bypass)
 * Search for subdomains in the /etc/nginx folder. If found, add it to the /etc/hosts file.
-* If the wep application has any mail service (with own domain), try snmpwalk. Even if is closed and there is nothing with nmap
+* Try SNMP enum with snmpwalk
 
 #### Websocket
 
