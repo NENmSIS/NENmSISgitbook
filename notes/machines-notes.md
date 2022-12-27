@@ -13,6 +13,7 @@ Execute it: `sudo -u deploy /home/deploy/password-manager` to have deploy's priv
 
 * If any user has docker acces, try `docker run -v /:/mnt --rm -it alpine chroot /mnt sh`as said in Gtfobins to obtain a root shell
 * Always scan UDP ports with `-sU` in `nmap`
+* Check the reverse connections (ping or revershe shell) with tcpdump. `sudo tcpdump -i tun0 port 4444`or `icmp` instead of `port 4444` &#x20;
 
 #### Pending tasks
 
