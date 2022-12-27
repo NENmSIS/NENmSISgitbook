@@ -6,7 +6,6 @@
 
 * [File upload bypass](https://vulp3cula.gitbook.io/hackers-grimoire/exploitation/web-application/file-upload-bypass)
 * Search for subdomains in the /etc/nginx folder. If found, add it to the /etc/hosts file.
-* Try SNMP enum with snmpwalk
 
 #### Websocket
 
