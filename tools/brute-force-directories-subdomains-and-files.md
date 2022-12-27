@@ -1,4 +1,4 @@
-# Brute force directories and files
+# Brute force directories,subdomains and files
 
 ### Gobuster
 
@@ -19,6 +19,10 @@ wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-large-directorie
 ```
 
 Subdomains
+
+```
+wfuzz -c -f subdomains.txt -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u "http://mentorquotes.htb/" -H "Host: FUZZ.mentorquotes.htb" --hl 9
+```
 
 ```bash
 wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --hc 400,404,403,301 -H "Host: FUZZ.shoppy.htb" -u http://shoppy.htb -t 100
