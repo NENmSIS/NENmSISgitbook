@@ -4,7 +4,7 @@
 
 <figure><img src="../../.gitbook/assets/imagen.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/imagen (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/imagen (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/imagen (3).png" alt=""><figcaption></figcaption></figure>
 
