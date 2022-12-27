@@ -27,3 +27,9 @@ wfuzz -c -f subdomains.txt -w /usr/share/seclists/Discovery/DNS/subdomains-top1m
 ```bash
 wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --hc 400,404,403,301 -H "Host: FUZZ.shoppy.htb" -u http://shoppy.htb -t 100
 ```
+
+#### Dirsearch
+
+```
+dirsearch -u http://api.mentorquotes.htb/
+```
