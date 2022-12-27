@@ -56,4 +56,5 @@
 ## Notes
 
 * [🌴 Machine's notes](notes/machines-notes.md)
+* [Databases](notes/databases.md)
 * [General Commands](notes/general-commands.md)
