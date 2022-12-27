@@ -18,4 +18,17 @@ Execute it: `sudo -u deploy /home/deploy/password-manager` to have deploy's priv
 #### Pending tasks
 
 * Nosqli
-*
+
+cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l bash`
+
+* flameshot to capture the screen with tools
+* launchpad.net to now the versions of ubuntu, apache... Siendo focal&#x20;
+* cat targeted | grep http | grep -oP '\d{1,5}/tcp | awk '{print $1}' FS="/" | while read prot; do echo -e "\n\[+] Escaneo en http://192.168.111.36:$port:\n"; whatweb http:192.168.111.36:$port; done
+* whatweb http://192.168.111.36:13380
+* `curl -s -X GET "HTTP://LEEROY.htb:13389/" | grep -oP 'plugins/\K[^/]+' | sort -u`
+* `searchsploit bbpress` \`searchsploit&#x20;
+* [https://chat.openai.com/auth/login](https://chat.openai.com/auth/login)
+* infosecmachines.io
+* Importante como mejora la shell.
+* println contraseñas jenkin
+* `hashid` to know hash types
