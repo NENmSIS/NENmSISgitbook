@@ -5,7 +5,8 @@
 [Nmap Cheat Sheet](https://www.stationx.net/nmap-cheat-sheet/)
 
 ```bash
-nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn <IP>
+sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn <IP>
+nmap -sCV -p22,80,8080 <IP> -oN targeted
 ```
 
 ### Live Host Discovery and Port Scan[​](broken-reference) <a href="#live-host-discovery-and-port-scan" id="live-host-discovery-and-port-scan"></a>
