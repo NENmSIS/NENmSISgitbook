@@ -21,6 +21,8 @@ Execute it: `sudo -u deploy /home/deploy/password-manager` to have deploy's priv
 
 cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l bash`
 
+#### S4vitar 27/12/22
+
 * flameshot to capture the screen with tools
 * launchpad.net to now the versions of ubuntu, apache... Siendo focal&#x20;
 * cat targeted | grep http | grep -oP '\d{1,5}/tcp | awk '{print $1}' FS="/" | while read prot; do echo -e "\n\[+] Escaneo en http://192.168.111.36:$port:\n"; whatweb http:192.168.111.36:$port; done
@@ -32,3 +34,4 @@ cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l
 * Importante como mejora la shell.
 * println contraseñas jenkin
 * `hashid` to know hash types
+*

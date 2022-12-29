@@ -279,7 +279,7 @@ It won't work by default due that the default nodes are known are normally block
 1. Request a Bridge
 2.
 
-    <figure><img src="../.gitbook/assets/imagen (4) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/imagen (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we will be able to bypass the Firewall block.
 
@@ -287,22 +287,22 @@ If you can't connect, use a `Select a Built-In Bridge`
 
 And now, to use the connection throught&#x20;
 
-<figure><img src="../.gitbook/assets/imagen (1) (1).png" alt=""><figcaption><p>Where the service is running</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (1) (1) (1).png" alt=""><figcaption><p>Where the service is running</p></figcaption></figure>
 
 Lets add thiis info to de config file:
 
-<figure><img src="../.gitbook/assets/imagen (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 HiddenServiceDir /tmp/serviciooculto_nen
 HiddenServicePort 80 127.0.0.1:8000
 ```
 
-<figure><img src="../.gitbook/assets/imagen (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After rebooting Tor, lets find the onion direction:
 
-<figure><img src="../.gitbook/assets/imagen (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/imagen (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Let's start a server in the port 8000: \`python3 -m http.server 8000
 
