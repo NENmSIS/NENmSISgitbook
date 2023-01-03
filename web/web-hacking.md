@@ -7,6 +7,7 @@
 * [File upload bypass](https://vulp3cula.gitbook.io/hackers-grimoire/exploitation/web-application/file-upload-bypass)
 * Search for subdomains in the /etc/nginx folder. If found, add it to the /etc/hosts file.
 * Always look for comments in the source code
+* Try for sqli if there is a login.
 
 
 

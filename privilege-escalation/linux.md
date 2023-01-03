@@ -30,7 +30,7 @@ find / -perm -u=s -type f 2>/dev/null #Search for SUID binaries
 ```bash
 ifconfig #Enumerate target network interfaces and their details
 route #Routing table
-netstat -ant #Active connections and ports
+netstat -ant #Active connections and find / -perm -u=s -type f 2>/dev/nullports
 ```
 
 #### Automated enumeration tools
