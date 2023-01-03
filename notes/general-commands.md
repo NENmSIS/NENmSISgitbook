@@ -40,3 +40,9 @@ On the victim's machine:
 And now on the atacker's machine we have the ports 5432 connected. The usage wil be on another tab: `psql -h 10.10.16.81 -U "postgres" -p 5432`
 
 ``
+
+#### Spawn a TTY Shell
+
+```
+python -c 'import pty; pty.spawn("/bin/sh")'
+```
