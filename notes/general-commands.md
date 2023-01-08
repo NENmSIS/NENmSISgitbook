@@ -46,3 +46,16 @@ And now on the atacker's machine we have the ports 5432 connected. The usage wil
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
 ```
+
+### Tmux
+
+```
+sudo apt install tmux -y
+```
+
+* [https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/)
+* [Introduction to termux Ippsec](https://www.youtube.com/watch?v=Lqehvpe\_djs)
+
+### Vim
+
+[https://vimsheet.com/](https://vimsheet.com/)
