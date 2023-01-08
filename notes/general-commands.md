@@ -75,3 +75,11 @@ base64 binarytotransfer -w 0
 echo f0VMR... <SNIP> ...lIuy9i | base64 -d > binarytotransfer
 #On the remote machine
 ```
+
+### md5sum
+
+To ensure the integrity of the transfered file.
+
+```
+md5sum transferedfile
+```
