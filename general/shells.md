@@ -270,4 +270,35 @@ There are times when we encounter websites that allow us an opportunity to uploa
 
 ### **Upgrade a Shell**
 
-`script /dev/null -c bash`
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+After we run this command, we will hit `ctrl+z` to background our shel and get back to our local terminal, and input the following stty command:
+
+```
+stty raw -echo
+fg
+[enter]
+[enter]
+```
+
+Once we hit `fg`, it will bring back our `netcat` shell to the foreground. At this point, the terminal will show a blank line. We can hit `enter` again to get back to our shell or input `reset` and hit enter to bring it back.
+
+We may notice that our shell does not cover the entire terminal. To fix this, we need to do this.
+
+On our local machine:
+
+```bash
+echo $TERM
+#xterm-256color
+stty size
+#60 300
+```
+
+On the victim's machine:
+
+```
+export TERM=xterm-256color
+stty rows 60 columns 300
+```

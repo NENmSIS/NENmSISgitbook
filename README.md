@@ -5,6 +5,7 @@
 ### General references
 
 * [Hacktricks](https://book.hacktricks.xyz/)
+* [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
 
 ### Books
 
