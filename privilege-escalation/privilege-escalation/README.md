@@ -4,9 +4,7 @@ description: General Privilege escalation page
 
 # Privilege escalation
 
-Linux: [GTFOBins](https://gtfobins.github.io/)
 
-Windows: [LOLBAS](https://lolbas-project.github.io)
 
 | Windows                          | Linux                                  |
 | -------------------------------- | -------------------------------------- |
