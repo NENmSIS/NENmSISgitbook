@@ -8,7 +8,8 @@
 * Search for subdomains in the /etc/nginx folder. If found, add it to the /etc/hosts file.
 * Always look for comments in the source code
 * Try for sqli if there is a login.
-* Check in the base web application the /README information
+
+
 
 
 
