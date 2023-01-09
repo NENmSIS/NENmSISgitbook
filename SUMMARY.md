@@ -61,4 +61,5 @@
 * [🌴 Machine's notes](notes/machines-notes.md)
 * [Databases](notes/databases.md)
 * [General Commands](notes/general-commands.md)
-* [HTB Academy cheatsheet](notes/htb-academy-cheatsheet.md)
+* [Linux Cheatsheet](notes/linux-cheatsheet.md)
+* [Windows Cheatsheet](notes/windows-cheatsheet.md)
