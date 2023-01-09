@@ -89,3 +89,22 @@ md5sum transferedfile
 ```
 xfreerdp /v:<targetIp> /u:<user> /p:<password>
 ```
+
+### smbclient
+
+```
+smbclient -L <IPaddress> -U <user>
+```
+
+#### Mounting the share:
+
+We may need first to install CIFS utilities:
+
+```shell-session
+sudo apt-get install cifs-utils
+```
+
+```bash
+sudo mount -t cifs -o username=<winusername>,password=<usernamepassword> //<ipaddoftarget>/<"Foldername"> /home/user/Desktop/
+#The last command is the path on our local machine where we want to mount the remote share 
+```

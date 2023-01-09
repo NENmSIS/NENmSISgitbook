@@ -1,4 +1,4 @@
-# HTB Academy cheatsheet
+# Linux Cheatsheet
 
 ### Basic Tools
 
