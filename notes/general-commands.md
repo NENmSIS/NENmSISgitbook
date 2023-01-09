@@ -83,3 +83,9 @@ To ensure the integrity of the transfered file.
 ```
 md5sum transferedfile
 ```
+
+### xfreerdp
+
+```
+xfreerdp /v:<targetIp> /u:<user> /p:<password>
+```
