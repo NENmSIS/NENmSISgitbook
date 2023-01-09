@@ -25,6 +25,7 @@
 ## Walkthroughs
 
 * [Hack The Box](walkthroughs/hack-the-box/README.md)
+  * [Academy notes](walkthroughs/hack-the-box/academy-notes.md)
   * [Forgot](walkthroughs/hack-the-box/forgot.md)
   * [Mentor](walkthroughs/hack-the-box/mentor.md)
   * [Shoppy](walkthroughs/hack-the-box/shoppy.md)
