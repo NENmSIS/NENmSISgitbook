@@ -21,6 +21,7 @@
 * [Network Services](general/network-services.md)
 * [Shells](general/shells.md)
 * [Curso Hacking Básico](general/curso-hacking-basico.md)
+* [Curso Hacking avanzado](general/curso-hacking-avanzado.md)
 
 ## Walkthroughs
 
