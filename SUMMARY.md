@@ -46,7 +46,8 @@
 * [Dirb](tools/dirb.md)
 * [Hydra](tools/hydra.md)
 * [Metasploit](tools/metasploit.md)
-* [Nmap](tools/nmap.md)
+* [Nmap](tools/nmap/README.md)
+  * [Nmap Cheatsheet](tools/nmap/nmap-cheatsheet.md)
 
 ## Linux
 
