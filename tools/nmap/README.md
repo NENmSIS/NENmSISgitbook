@@ -136,3 +136,11 @@ There are 3 formats: normal, grepable and XML.
 #### Examples[​](broken-reference) <a href="#examples" id="examples"></a>
 
 * **sudo nmap -Pn -A -T5 IPDEST**
+
+#### Firewall bypass
+
+* `-D RND:5` Decoy. Use 5 random IP adresses as source of the packets. (To avoid blocks from ISP)
+* `-S <IP>` Scan from a different source IP
+* `--source-port 53` Scan from DNS port
+* `-sA` TCP ACK Scan. The target would respond to the ACK with RST regardless of the port. FIREWALL EVASION. We can learn wich ports are not filtered.
+*
