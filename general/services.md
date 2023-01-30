@@ -28,10 +28,10 @@ nmap --script ftp-* -p 21 <ip>
 #### Config Files
 
 ```
-ftpusers
-ftp.conf
-proftpd.conf
-vsftpd.conf
+/etc/ftpusers
+/etc/ftp.conf
+/etc/proftpd.conf
+/etc/vsftpd.conf
 ```
 
 #### Post Exploitation

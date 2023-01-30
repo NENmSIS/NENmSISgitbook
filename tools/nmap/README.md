@@ -109,6 +109,8 @@ nmap -sCV -vvv -p22,80,8080 <IP> -oN targeted
 
 #### NSE Scripts[​](broken-reference) <a href="#nse-scripts" id="nse-scripts"></a>
 
+Scripts location: /usr/share/nmap/scripts/
+
 There are many categories available: [NSE](https://nmap.org/book/nse-usage.html)
 
 * **-sC** or **--script=default** Run the scripts in default
