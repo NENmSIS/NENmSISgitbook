@@ -56,5 +56,12 @@ The default configuration of vsFTPd can be found in `/etc/vsftpd.conf`. In here,
 snmpwalk -v2c -c internal mentorquotes.htb
 ```
 
+## IMAP
+
+Interesting links with commands:
+
+* &#x20;[https://www.atmail.com/blog/imap-commands/](https://www.atmail.com/blog/imap-commands/)
+* [https://vk9-sec.com/25110143-tcp-smtppop3imap-enumeration/](https://vk9-sec.com/25110143-tcp-smtppop3imap-enumeration/)
+
 
 
