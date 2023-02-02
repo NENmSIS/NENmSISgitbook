@@ -63,5 +63,9 @@ Interesting links with commands:
 * &#x20;[https://www.atmail.com/blog/imap-commands/](https://www.atmail.com/blog/imap-commands/)
 * [https://vk9-sec.com/25110143-tcp-smtppop3imap-enumeration/](https://vk9-sec.com/25110143-tcp-smtppop3imap-enumeration/)
 
+## IPMI
+
+* [https://www.rapid7.com/blog/post/2013/07/02/a-penetration-testers-guide-to-ipmi/](https://www.rapid7.com/blog/post/2013/07/02/a-penetration-testers-guide-to-ipmi/)
+
 
 
