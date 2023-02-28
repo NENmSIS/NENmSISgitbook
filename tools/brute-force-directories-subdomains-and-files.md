@@ -34,3 +34,18 @@ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -
 ```
 dirsearch -u http://api.mentorquotes.htb/
 ```
+
+### Active Subdomain Enumeration
+
+#### 1. Identifying Nameservers
+
+```bash
+nslookup -type=NS zonetransfer.me
+#response: zonetransfer.me nameserver = nsztm1.digi.ninja
+```
+
+#### 2. Testing fo ANY and AXFR Zone Transfer
+
+```
+nslookup -type=any -query=AXFR zonetransfer.me nsztm1.digi.ninja
+```
