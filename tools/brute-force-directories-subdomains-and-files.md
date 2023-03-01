@@ -54,6 +54,16 @@ curl -s H "Host: noexiste.inlanefreight.com" http://<IP> |wc -c
 ffuf -c -w /path/to/wordlist -u http://inlanefreight.com "Host: FUZZ.inlanefreight.com" -fs 10986
 ```
 
+### sublist3r
+
+Python tool designed to enumerate subdomains of websites using OSINT
+
+[https://github.com/aboul3la/Sublist3r](https://github.com/aboul3la/Sublist3r)
+
+```
+sublist3r -d https://<FQDN>
+```
+
 ### Active Subdomain Enumeration
 
 #### 1. Identifying Nameservers
