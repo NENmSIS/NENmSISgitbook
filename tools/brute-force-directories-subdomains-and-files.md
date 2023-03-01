@@ -35,6 +35,25 @@ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -
 dirsearch -u http://api.mentorquotes.htb/
 ```
 
+### ffuf
+
+[https://github.com/ffuf/ffuf](https://github.com/ffuf/ffuf)
+
+#### Virtual Hosts Discovery
+
+1. Figure out the response lengt of false positive
+
+```
+curl -s H "Host: noexiste.inlanefreight.com" http://<IP> |wc -c
+# 10986
+```
+
+2. Filter out the responses of lengt 10986
+
+```bash
+ffuf -c -w /path/to/wordlist -u http://inlanefreight.com "Host: FUZZ.inlanefreight.com" -fs 10986
+```
+
 ### Active Subdomain Enumeration
 
 #### 1. Identifying Nameservers
