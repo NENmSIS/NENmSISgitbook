@@ -1,5 +1,7 @@
 # Brute force directories,subdomains and files
 
+## Active
+
 ### Gobuster
 
 ```bash
@@ -54,16 +56,6 @@ curl -s H "Host: noexiste.inlanefreight.com" http://<IP> |wc -c
 ffuf -c -w /path/to/wordlist -u http://inlanefreight.com "Host: FUZZ.inlanefreight.com" -fs 10986
 ```
 
-### sublist3r
-
-Python tool designed to enumerate subdomains of websites using OSINT
-
-[https://github.com/aboul3la/Sublist3r](https://github.com/aboul3la/Sublist3r)
-
-```
-sublist3r -d https://<FQDN>
-```
-
 ### Active Subdomain Enumeration
 
 #### 1. Identifying Nameservers
@@ -77,4 +69,32 @@ nslookup -type=NS zonetransfer.me
 
 ```
 nslookup -type=any -query=AXFR zonetransfer.me nsztm1.digi.ninja
+```
+
+## Passive
+
+### sublist3r
+
+Python tool designed to enumerate subdomains of websites using OSINT
+
+[https://github.com/aboul3la/Sublist3r](https://github.com/aboul3la/Sublist3r)
+
+```
+sublist3r -d https://<FQDN>
+```
+
+### crt.sh
+
+Extract subdomains with SSL/TLS certificates
+
+```
+https://crt.sh/?q=<FQDN>
+```
+
+### TheHarvester
+
+[https://github.com/laramies/theHarvester](https://github.com/laramies/theHarvester)
+
+```
+theHarvester -d <TARGET> -b <SOURCE>
 ```
