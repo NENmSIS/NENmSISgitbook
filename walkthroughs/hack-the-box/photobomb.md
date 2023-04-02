@@ -18,7 +18,7 @@ Inspect the POST with burp to download a PNG photo and find diferrent parametere
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 We open the script and see that find is using the relative path, not the absolute. So lets crate a find command as bash and execute it as root
 

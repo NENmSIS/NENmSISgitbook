@@ -153,7 +153,7 @@ we can search for the script in the other directories specified in the $PATH var
 
 ## Exploiting SUID Binaries
 
-<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -174,7 +174,7 @@ chmod a-x script.sh #Remove executable permissions from a file
 
 When applied, this permission allows users to execute a script or binary with the permissions of the file owner.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 In this case, the members of the group and other users on the system will be able to execute the binary with root privileges, since the owner of the file is the root user.
 

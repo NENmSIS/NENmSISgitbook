@@ -25,6 +25,7 @@
 
 ## Walkthroughs
 
+* [Kioptrix 1](walkthroughs/kioptrix-1.md)
 * [Hack The Box](walkthroughs/hack-the-box/README.md)
   * [Academy notes](walkthroughs/hack-the-box/academy-notes.md)
   * [Forgot](walkthroughs/hack-the-box/forgot.md)
