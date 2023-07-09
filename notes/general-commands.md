@@ -41,7 +41,7 @@ On the victim's machine:
 
 And now on the atacker's machine we have the ports 5432 connected. The usage wil be on another tab: `psql -h 10.10.16.81 -U "postgres" -p 5432`
 
-``
+
 
 #### Spawn a TTY Shell
 
@@ -87,7 +87,7 @@ md5sum transferedfile
 ### xfreerdp
 
 ```
-xfreerdp /v:<targetIp> /u:<user> /p:<password>
+xfreerdp /v:<targetIp> /u:<user> /p:<password> /size:1280x720
 ```
 
 ### smbclient
@@ -107,4 +107,10 @@ sudo apt-get install cifs-utils
 ```bash
 sudo mount -t cifs -o username=<winusername>,password=<usernamepassword> //<ipaddoftarget>/<"Foldername"> /home/user/Desktop/
 #The last command is the path on our local machine where we want to mount the remote share 
+```
+
+#### Create a Share with smbserver.py
+
+```
+sudo python3 /usr/share/doc/python3-impacket/examples/smbserver.py -smb2support NOMBRECARPETA /home/ltnbob/Documents/
 ```

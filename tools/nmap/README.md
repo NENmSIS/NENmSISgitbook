@@ -86,7 +86,7 @@ nmap -sCV -vvv -p22,80,8080 <IP> -oN targeted
   * **-n** no DNS lookup
   * **-R** reverse-DNS lookup for all hosts
 
-***
+
 
 #### Disable Host discovery[​](broken-reference) <a href="#disable-host-discovery" id="disable-host-discovery"></a>
 

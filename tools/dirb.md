@@ -2,7 +2,7 @@
 
 For all the info: `dirb` or [https://www.kali.org/tools/dirb/](https://www.kali.org/tools/dirb/)
 
-***
+
 
 * Default usage: `dirb http://IP/`
 * Use with wordlist: `dirb http://IP/ /usr/share/dirb/wordlists/small.txt`
