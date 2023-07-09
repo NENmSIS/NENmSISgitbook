@@ -109,7 +109,7 @@ sudo mount -t cifs -o username=<winusername>,password=<usernamepassword> //<ipad
 #The last command is the path on our local machine where we want to mount the remote share 
 ```
 
-#### Create a Share with smbserver.py
+### Create a Share with smbserver.py
 
 ```
 sudo python3 /usr/share/doc/python3-impacket/examples/smbserver.py -smb2support NOMBRECARPETA /home/ltnbob/Documents/
