@@ -37,4 +37,7 @@ cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l
 * Importante como mejora la shell.
 * println contraseñas jenkin
 * `hashid` to know hash types
-*
+
+## Hacktricks&#x20;
+
+root:$6$XePuRx/4eO0WuuPS$a0t5vIuIrBDFx1LyxAozOu.cVaww01u.6dSvct8AYVVI6ClJmY8ZZuPDP7IoXRJhYz4U8.DJUlilUw2EfqhXg.:0:0:root:/root:/bin/bash
