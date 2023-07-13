@@ -41,3 +41,17 @@ cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l
 ## Hacktricks&#x20;
 
 root:$6$XePuRx/4eO0WuuPS$a0t5vIuIrBDFx1LyxAozOu.cVaww01u.6dSvct8AYVVI6ClJmY8ZZuPDP7IoXRJhYz4U8.DJUlilUw2EfqhXg.:0:0:root:/root:/bin/bash
+
+/opt/specialfiles/carlos.keytab
+
+
+
+\[+] Keytab File successfully imported.&#x20;
+
+REALM : INLANEFREIGHT.HTB&#x20;
+
+SERVICE PRINCIPAL : carlos/&#x20;
+
+NTLM HASH : a738f92b3c08b424ec2d99589a9cce60&#x20;
+
+AES-256 HASH : 42ff0baa586963d9010584eb9590595e8cd47c489e25e82aae69b1de2943007f AES-128 HASH : fa74d5abf4061baa1d4ff8485d1261c4

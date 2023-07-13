@@ -6,10 +6,12 @@
 
 * [Hacktricks](https://book.hacktricks.xyz/)
 * [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+*
 
 ### Tools
 
 * [https://www.revshells.com/](https://www.revshells.com/)
+* [https://crackstation.net/](https://crackstation.net/)
 
 ### Books
 
