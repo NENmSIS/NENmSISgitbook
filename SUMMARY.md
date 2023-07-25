@@ -40,6 +40,7 @@
   * [Vaccine](walkthroughs/hack-the-box/vaccine.md)
 * [Kioptrix 1.1](walkthroughs/kioptrix-1.1.md)
 * [Afganistan](walkthroughs/afganistan.md)
+* [Passwords Hard lab](walkthroughs/passwords-hard-lab.md)
 
 ## Tools
 
