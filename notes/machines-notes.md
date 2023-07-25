@@ -42,6 +42,47 @@ cat aliased con bat. se mira en which cat. para verlo es `cat -l java` o `cat -l
 
 root:$6$XePuRx/4eO0WuuPS$a0t5vIuIrBDFx1LyxAozOu.cVaww01u.6dSvct8AYVVI6ClJmY8ZZuPDP7IoXRJhYz4U8.DJUlilUw2EfqhXg.:0:0:root:/root:/bin/bash
 
+
+
+john aes256 ticket: 581c7f88dc74998ed360fd0f9a7840a36a5c2dd78db363813677dd79f92215d2
+
+
+
+/opt/specialfiles/carlos.keytab
+
+/etc/krb5.keytab  carlos Password5
+
+
+
+/home/carlos@inlanefreight.htb/.scripts/kerberos\_script\_test.sh
+
+```
+kinit svc_workstations@INLANEFREIGHT.HTB -k -t /home/carlos@inlanefreight.htb/.scripts/svc_workstations.kt
+smbclient //dc01.inlanefreight.htb/svc_workstations -c 'ls'  -k -no-pass > /home/carlos@inlanefreight.htb/script-test-results.txt
+```
+
+svc\_workstations@inlanefreight.htb Password4
+
+
+
+&#x20;zip Destiny2022!
+
+docx 987654321
+
+jason:C4mNKjAtL2dydsYa6
+
+dennis  7AUgWWQEiMPdqx
+
+
+
+
+
+
+
+
+
+&#x20;
+
 /opt/specialfiles/carlos.keytab
 
 
