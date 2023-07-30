@@ -6,7 +6,7 @@
 
 * [Hacktricks](https://book.hacktricks.xyz/)
 * [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
-*
+* [https://www.geeksforgeeks.org/python-programming-language/?ref=shm\_outind](https://www.geeksforgeeks.org/python-programming-language/?ref=shm\_outind)
 
 ### Tools
 
