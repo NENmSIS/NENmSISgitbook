@@ -1,10 +1,10 @@
 # Attacking common services
 
-robin 7iz4rnckjsduza7
+## Easy
 
-jason:34c8zuNBo91!@28Bszh
+fiona@inlanefreight.htb
 
-mssqlsvc princess1
+
 
 
 
