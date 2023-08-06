@@ -2,7 +2,7 @@
 
 ## Easy
 
-fiona@inlanefreight.htb
+SMTP fiona@inlanefreight.htb 987654321
 
 
 
