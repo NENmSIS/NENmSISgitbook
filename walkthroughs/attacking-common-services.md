@@ -8,6 +8,12 @@ FTP fiona 987654321
 
 
 
+```
+mariadb -h «IP» -u fiona -p987654321
+```
+
+
+
 
 
 
