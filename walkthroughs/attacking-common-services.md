@@ -110,33 +110,13 @@ Kaksd032klasdA#
 
 
 
-(k20ASD10934kadA&#x20;
+MSSQL&#x20;
 
-KDIlalsa9020$&#x20;
+```
+mssqlclient.py -p 1433 WIN-HARD/fiona@10.129.91.176 -windows-auth
+```
 
-JT9ads02lasSA@&#x20;
 
-Kaksd032klasdA#
-
-1234567&#x20;
-
-(DK02ka-dsaldS&#x20;
-
-Inlanefreight2022&#x20;
-
-Inlanefreight2022!&#x20;
-
-TestingDB123
-
-kAkd03SA@#!&#x20;
-
-48Ns72!bns74@S84NNNSl&#x20;
-
-SecurePassword!&#x20;
-
-Password123!&#x20;
-
-SecureLocationforPasswordsd123!!
 
 
 
