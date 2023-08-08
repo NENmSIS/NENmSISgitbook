@@ -55,3 +55,88 @@ PORT STATE SERVICE REASON&#x20;
 
 3389/tcp open ms-wbt-server syn-ack ttl 127
 
+### fiona 48Ns72!bns74@S84NNNSl  RDP
+
+#### information.txt
+
+Windows Creds
+
+kAkd03SA@#!&#x20;
+
+48Ns72!bns74@S84NNNSl&#x20;
+
+SecurePassword!&#x20;
+
+Password123!&#x20;
+
+SecureLocationforPasswordsd123!!
+
+### john&#x20;
+
+To do:
+
+* Keep testing with the database.
+* Create a local linked server.
+
+#### secrets.txt
+
+Password Lists:
+
+1234567&#x20;
+
+(DK02ka-dsaldS&#x20;
+
+Inlanefreight2022&#x20;
+
+Inlanefreight2022!&#x20;
+
+TestingDB123
+
+### simon
+
+#### random.txt
+
+Credentials
+
+(k20ASD10934kadA&#x20;
+
+KDIlalsa9020$&#x20;
+
+JT9ads02lasSA@&#x20;
+
+Kaksd032klasdA#
+
+
+
+
+
+(k20ASD10934kadA&#x20;
+
+KDIlalsa9020$&#x20;
+
+JT9ads02lasSA@&#x20;
+
+Kaksd032klasdA#
+
+1234567&#x20;
+
+(DK02ka-dsaldS&#x20;
+
+Inlanefreight2022&#x20;
+
+Inlanefreight2022!&#x20;
+
+TestingDB123
+
+kAkd03SA@#!&#x20;
+
+48Ns72!bns74@S84NNNSl&#x20;
+
+SecurePassword!&#x20;
+
+Password123!&#x20;
+
+SecureLocationforPasswordsd123!!
+
+
+
