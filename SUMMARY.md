@@ -51,6 +51,7 @@
 * [Metasploit](tools/metasploit.md)
 * [Nmap](tools/nmap/README.md)
   * [Nmap Cheatsheet](tools/nmap/nmap-cheatsheet.md)
+* [Active Directory Tools of the trade](tools/active-directory-tools-of-the-trade.md)
 
 ## Linux
 
