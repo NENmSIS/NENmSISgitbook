@@ -41,6 +41,7 @@
 * [Kioptrix 1.1](walkthroughs/kioptrix-1.1.md)
 * [Afganistan](walkthroughs/afganistan.md)
 * [Attacking common services](walkthroughs/attacking-common-services.md)
+* [AD](walkthroughs/ad.md)
 
 ## Tools
 
