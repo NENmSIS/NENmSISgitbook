@@ -24,3 +24,4 @@ And on the webshell we paste the revershe shell 'Powershell#3 base64' from [http
 
 And now we use the commands from the section.
 
+To transfer files,we can use the PowerShell Invoke-WebRequest, from the file transfer module. But we need to execute it from the web shell, because from the reverse shell won't work.
