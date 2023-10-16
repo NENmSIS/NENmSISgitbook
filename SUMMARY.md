@@ -70,3 +70,7 @@
 * [General Commands](notes/general-commands.md)
 * [Linux Cheatsheet](notes/htb-academy-cheatsheet.md)
 * [Windows Cheatsheet](notes/windows-cheatsheet.md)
+
+***
+
+* [Cyber Intelligence and Situational Awareness](cyber-intelligence-and-situational-awareness.md)
