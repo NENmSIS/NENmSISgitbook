@@ -4,6 +4,8 @@
 
 SpJoXcGAb2
 
+## Practice
+
 ### kibana
 
 in the folder of the kali machine
@@ -17,6 +19,18 @@ sudo openvpn --config oeiras2023-nocipher-udp.ovpn
 {% embed url="http://10.0.100.137:5601" %}
 
 login:ncistudent password:Oeiras&/
+
+
+
+If you restart the machine and want to run in your own kibana
+
+```
+sudo sysctl -w vm.max_map_count=262144
+```
+
+### MITRE TRAM
+
+
 
 ## Course
 
