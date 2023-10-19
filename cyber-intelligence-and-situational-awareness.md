@@ -28,13 +28,25 @@ If you restart the machine and want to run in your own kibana
 sudo sysctl -w vm.max_map_count=262144
 ```
 
-### MITRE TRAM
+To scan report and extract the TTP's from MITRE with machine learning
 
+#### CYHINT
 
+To create reports
 
 ## Course
 
-#### 1.1.1 Cyber Intelligence
+### Tools
+
+* https://mitreattack.github.io/attack-navigator
+
+## Exam
+
+* To make use of taxonomies. Reports must follows taxonomies. Once I have reports, I can analyze them on a map.
+* Humint
+* Visualizations must be **interactive**. interactivity and iterativity are a must.
+* Collect, analyse and visualize
+*
 
 
 
