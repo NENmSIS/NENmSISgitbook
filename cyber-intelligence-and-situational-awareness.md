@@ -46,7 +46,9 @@ To create reports
 * Humint
 * Visualizations must be **interactive**. interactivity and iterativity are a must.
 * Collect, analyse and visualize
-*
+* Hybrid and multimodal
+* a threat source is the origin of a given threat and causes threat events
+* Relations among physical elements
 
 
 
