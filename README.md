@@ -10,6 +10,7 @@
 * [https://ippsec.rocks/?#](https://ippsec.rocks/?)
 * [https://0xdf.gitlab.io/](https://0xdf.gitlab.io/)
 * [https://wadcoms.github.io/](https://wadcoms.github.io/)
+* [Read teams notes](https://www.ired.team/)
 
 ### Tools
 
