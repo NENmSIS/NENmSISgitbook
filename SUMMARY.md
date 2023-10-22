@@ -41,7 +41,7 @@
 * [Kioptrix 1.1](walkthroughs/kioptrix-1.1.md)
 * [Afganistan](walkthroughs/afganistan.md)
 * [Attacking common services](walkthroughs/attacking-common-services.md)
-* [AD](walkthroughs/ad.md)
+* [AD Enumeration & Attacks - Skills Assessment Part I](walkthroughs/ad-enumeration-and-attacks-skills-assessment-part-i.md)
 
 ## Tools
 
