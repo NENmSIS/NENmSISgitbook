@@ -11,6 +11,7 @@
 * [https://0xdf.gitlab.io/](https://0xdf.gitlab.io/)
 * [https://wadcoms.github.io/](https://wadcoms.github.io/)
 * [Read teams notes](https://www.ired.team/)
+* [https://juggernaut-sec.com/author/thecyberjuggernaut/](https://juggernaut-sec.com/author/thecyberjuggernaut/)
 
 ### Tools
 
