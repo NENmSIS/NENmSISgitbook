@@ -44,6 +44,7 @@
 * [AD Enumeration & Attacks - Skills Assessment Part I](walkthroughs/ad-enumeration-and-attacks-skills-assessment-part-i.md)
 * [AD Enumeration & Attacks - Skills Assessment Part II](walkthroughs/ad-enumeration-and-attacks-skills-assessment-part-ii.md)
 * [CTF LATVIA](walkthroughs/ctf-latvia.md)
+* [HTB Academy](walkthroughs/htb-academy.md)
 
 ## Tools
 
